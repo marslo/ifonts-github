@@ -12,68 +12,56 @@
 @advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Google Symbols", "Font Awesome 7 Pro", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "Font Awesome 6 Pro", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, iconfont-luckysheet, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", geico, marvell-icons, icomoon, element-icons, olive-icons, "SF Pro Icons", Iconochive-Regular, sans-serif"
 ==/UserStyle== */
 
-/* csslint ignore:start */
-@import url('http://fonts.googleapis.com/css?family=Overlock:400,700,400italic,700italic|Calligraffitti');
-@import url('https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC:wght@400;700&display=swap');
-/* csslint ignore:end */
-
-/* ╔════════════════════════════════════════════════════════════╗ */
-/* ║                 global: shared definitions                 ║ */
-/* ╚════════════════════════════════════════════════════════════╝ */
-
-@font-face {
-  font-family: "San Francisco";
-  font-weight: 400;
-  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
-}
-
-@font-face {
-  font-family: 'OperatorMonoSSmLig Nerd Font Mono';
-  font-weight: 300;
-  font-style: normal;
-  src: url('https://github.com/marslo/fonts/raw/fonts/Operator/OperatorMonoSSmLigNF/otf/OperatorMonoSSmLigNerdFontMono-Light.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'OperatorMonoSSmLig Nerd Font Mono';
-  font-weight: 300;
-  font-style: italic;
-  src: url('https://github.com/marslo/fonts/raw/fonts/Operator/OperatorMonoSSmLigNF/otf/OperatorMonoSSmLigNerdFontMono-LightItalic.otf') format('opentype');
-}
-
-:root {
-  --font-family-sans: /*[[font-family-sans]]*/;
-  --font-family-mono: /*[[font-family-mono]]*/;
-  --font-family-mono-accent: 'VictorMono Nerd Font Mono', 'Lekton Nerd Font Mono', 'LXGWWenKaiMono Nerd Font Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
-  --font-family-handwritten: /*[[font-family-handwritten]]*/;
-  --font-family-icon: /*[[font-family-icon]]*/;
-  --font-family-override: /*[[font-family-sans]]*/;
-
-  --font-size-big-sans: 20px;
-  --font-size-normal-sans: 18px;
-  --font-size-small-sans: 15px;
-
-  --font-size-big-mono: 17px;
-  --font-size-normal-mono: 15px;
-  --font-size-small-mono: 14px;
-  --font-size-xsmall-mono: 13px;
-
-  --font-size-h1: 34px;
-  --font-size-h2: 26px;
-  --font-size-h3: 24px;
-  --font-size-h4: 20px;
-  --font-size-h5: 16px;
-
-  --font-size-github-mono: var(--font-size-normal-mono);
-}
-
-
 /* ╔════════════════════════════════════════════════════════════╗ */
 /* ║              github: general rules (github.com/io)         ║ */
 /* ╚════════════════════════════════════════════════════════════╝ */
 
 @-moz-document regexp("https?://[^/]*github\\.(com|io).*") {
+
+  /* ── shared definitions (scoped to this domain; no global section) ── */
+  @font-face {
+    font-family: "San Francisco";
+    font-weight: 400;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+  }
+  @font-face {
+    font-family: 'OperatorMonoSSmLig Nerd Font Mono';
+    font-weight: 300;
+    font-style: normal;
+    src: url('https://github.com/marslo/fonts/raw/fonts/Operator/OperatorMonoSSmLigNF/otf/OperatorMonoSSmLigNerdFontMono-Light.otf') format('opentype');
+  }
+  @font-face {
+    font-family: 'OperatorMonoSSmLig Nerd Font Mono';
+    font-weight: 300;
+    font-style: italic;
+    src: url('https://github.com/marslo/fonts/raw/fonts/Operator/OperatorMonoSSmLigNF/otf/OperatorMonoSSmLigNerdFontMono-LightItalic.otf') format('opentype');
+  }
+
+  :root {
+    --font-family-sans: /*[[font-family-sans]]*/;
+    --font-family-mono: /*[[font-family-mono]]*/;
+    --font-family-mono-accent: 'VictorMono Nerd Font Mono', 'Lekton Nerd Font Mono', 'LXGWWenKaiMono Nerd Font Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+    --font-family-handwritten: /*[[font-family-handwritten]]*/;
+    --font-family-icon: /*[[font-family-icon]]*/;
+    --font-family-override: /*[[font-family-sans]]*/;
+
+    --font-size-big-sans: 20px;
+    --font-size-normal-sans: 18px;
+    --font-size-small-sans: 15px;
+
+    --font-size-big-mono: 17px;
+    --font-size-normal-mono: 15px;
+    --font-size-small-mono: 14px;
+    --font-size-xsmall-mono: 13px;
+
+    --font-size-h1: 34px;
+    --font-size-h2: 26px;
+    --font-size-h3: 24px;
+    --font-size-h4: 20px;
+    --font-size-h5: 16px;
+
+    --font-size-github-mono: var(--font-size-normal-mono);
+  }
 
   html {
     --font-size-xsmall-mono: 13px;
@@ -171,23 +159,23 @@
     a[class*="tab"],
     i[class*="fa"],
     [class*="aui-dropdown2"] *,
-    [class*="badge"]
+    [class*="badge"],
     [class*="btn"],
     [class*="logo"],
     [class*="text-normal"] *,
-    [class*="text-xs"],
+    [class*="text-xs"]
   ),
   h1#gh-pages code,
   div[class*="headline"]:not(
-    [class*="-view-model"]
-    [class*="container__"],
+    [class*="-view-model"],
+    [class*="container__"]
   ) *:not(
-    [class*="bot-status-badge"]
+    [class*="bot-status-badge"],
     [class*="btn"],
     [class*="byline__"],
     [class*="container__"],
     [class*="headline__"],
-    [class*="timestamp"],
+    [class*="timestamp"]
   ),
   div#click-to-connect > div > :not(h1):not(h2),
   .markdown-body h1, .markdown-section h1 {
@@ -219,11 +207,10 @@
   .markdown-section h2 > code,
   h3:not(:has(button)):not(
     [class*="btn"],
-    [class*="f5"]
+    [class*="f5"],
     [class*="ghx-name"],
-    [class*="gr-access-section"],
+    [class*="gr-access-section"]
   ) div:not(
-    [class*="react-directory-truncate"],
     [class*="truncate"]
   ),
   .markdown-body h3 *,
@@ -320,7 +307,6 @@
   i[class*="fa-"],
   span[class*="glyphicon"],
   span[class*="style_Navbar"], span[class*="avatar"]:not([class*="gravatar-text"]), span[class*="icon-"],
-  i[class*="s-fa-"],
   i[class*="material-icons-"],
   i[class*="google-material-icons"],
   i[class*="iconfont"],
