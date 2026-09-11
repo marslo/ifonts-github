@@ -1,3 +1,17 @@
+## [1.0.1](https://github.com/marslo/ifonts-github/compare/v1.0.0...v1.0.1) (2026-09-11)
+
+### Bug Fixes
+
+* **scope**: stop the style loading site-wide and repair malformed :not() lists ([94d7343](https://github.com/marslo/ifonts-github/commit/94d73430a5d7dec067a7dd33f8021b16516bef13))
+  - move top-level @font-face and :root into the @-moz-document block so the style no longer injects a global section on every site
+  - drop three unused google-fonts @import links
+  - add/remove commas in :not() selector lists that Stylus flagged as "Unexpected )" parse errors
+
+
+### Others
+
+* **BlexMonoLig**, **githubusercontent**: using `"BlexMonoLig Nerd Font Mono"` as default mono font; enable `githubusercontent\\.(com|io)` domain ([3e24d4d](https://github.com/marslo/ifonts-github/commit/3e24d4d54cbc997356cffda981a568be5825100c))
+
 ## 1.0.0 (2026-09-11)
 
 ### Features
