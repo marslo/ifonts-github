@@ -1,0 +1,652 @@
+/* ==UserStyle==
+@name           iFonts GitHub (marslo)
+@version        0.0.1
+@namespace      github.com/marslo
+@description    github-only font customization
+@author         marslo
+@homepageURL    https://github.com/marslo/ifonts
+@updateURL      https://github.com/marslo/ifonts/raw/main/ifonts-github.user.css
+@advanced       text font-family-sans        "Sans Fonts"        ""Titillium Nerd Font Upright", "Titillium Nerd Font", "Gisha Nerd Font", "Recursive Sans Casual Static Nerd Font", "Yoshe Shayufeite Nerd Font", "MicrosoftYaHei Nerd Font", "LXGWBright Nerd Font", "Qian Li Jiang Shan Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Titillium Up", Titillium, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Font Text""
+@advanced       text font-family-mono        "Mono Fonts"        ""OperatorMonoSSmLig Nerd Font Mono", "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "Lekton Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas, "Yozai Nerd Font""
+@advanced       text font-family-handwritten "Handwritten Fonts" ""Papyrus Nerd Font", fantasy"
+@advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Google Symbols", "Font Awesome 7 Pro", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "Font Awesome 6 Pro", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, iconfont-luckysheet, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", geico, marvell-icons, icomoon, element-icons, olive-icons, "SF Pro Icons", Iconochive-Regular, sans-serif"
+==/UserStyle== */
+
+/* csslint ignore:start */
+@import url('http://fonts.googleapis.com/css?family=Overlock:400,700,400italic,700italic|Calligraffitti');
+@import url('https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC:wght@400;700&display=swap');
+/* csslint ignore:end */
+
+/* ╔════════════════════════════════════════════════════════════╗ */
+/* ║                 global: shared definitions                 ║ */
+/* ╚════════════════════════════════════════════════════════════╝ */
+
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+
+@font-face {
+  font-family: 'OperatorMonoSSmLig Nerd Font Mono';
+  font-weight: 300;
+  font-style: normal;
+  src: url('https://github.com/marslo/fonts/raw/fonts/Operator/OperatorMonoSSmLigNF/otf/OperatorMonoSSmLigNerdFontMono-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'OperatorMonoSSmLig Nerd Font Mono';
+  font-weight: 300;
+  font-style: italic;
+  src: url('https://github.com/marslo/fonts/raw/fonts/Operator/OperatorMonoSSmLigNF/otf/OperatorMonoSSmLigNerdFontMono-LightItalic.otf') format('opentype');
+}
+
+:root {
+  --font-family-sans: /*[[font-family-sans]]*/;
+  --font-family-mono: /*[[font-family-mono]]*/;
+  --font-family-mono-accent: 'VictorMono Nerd Font Mono', 'Lekton Nerd Font Mono', 'LXGWWenKaiMono Nerd Font Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  --font-family-handwritten: /*[[font-family-handwritten]]*/;
+  --font-family-icon: /*[[font-family-icon]]*/;
+  --font-family-override: /*[[font-family-sans]]*/;
+
+  --font-size-big-sans: 20px;
+  --font-size-normal-sans: 18px;
+  --font-size-small-sans: 15px;
+
+  --font-size-big-mono: 17px;
+  --font-size-normal-mono: 15px;
+  --font-size-small-mono: 14px;
+  --font-size-xsmall-mono: 13px;
+
+  --font-size-h1: 34px;
+  --font-size-h2: 26px;
+  --font-size-h3: 24px;
+  --font-size-h4: 20px;
+  --font-size-h5: 16px;
+
+  --font-size-github-mono: var(--font-size-normal-mono);
+}
+
+
+/* ╔════════════════════════════════════════════════════════════╗ */
+/* ║              github: general rules (github.com/io)         ║ */
+/* ╚════════════════════════════════════════════════════════════╝ */
+
+@-moz-document regexp("https?://[^/]*github\\.(com|io).*") {
+
+  html {
+    --font-size-xsmall-mono: 13px;
+    --font-size-h5: 16px;
+  }
+
+  body {
+    font-family: var(--font-family-sans), var(--font-family-mono) !important;
+  }
+
+  /**
+   * kbd, pre, code:                             html tag. e.g.: <kbd></kbd>, <pre></pre>
+   * pre *, code *, div.line-numbers, div.code   html tag with class. e.g.: <div class="code"></div> <div class="line-numbers"></div>
+   * .line, .line-number, .monospaced:           specific class name
+   * #name, #number                              specific id name
+   * :is(), :not(), :where(), :any()             Pseudo-classes https://developer.mozilla.org/en-US/docs/Web/CSS
+   * :not(:is( ... ) )                           to exclude parent elements
+  **/
+  *:not(
+    pre,
+    code,
+    textarea,
+    button,
+    select,
+    option,
+    cursor,
+    kbd,
+    icon,
+    input,
+    i
+  ):not(::before):not(::after):not(canvas.graph-cursor-pointer):not(
+    code *,
+    textarea *,
+    * pre *,
+    div.ace_editor,
+    .ace_editor *
+  ):not(
+    [class*="CodeMirror-"],
+    [class*="DPvwYc"],
+    [class*="Da"],
+    [class*="ace_"],
+    [class*="avatar-"],
+    [class*="bowtie-"],
+    [class*="cm-"],
+    [class*="code"],
+    [class*="drop"],
+    [class*="fa-"],
+    [class*="gr-"],
+    [class*="hljs"],
+    [class*="ico"],
+    [class*="js-post"],
+    [class*="language-"],
+    [class*="line"],
+    [class*="para"],
+    [class*="pc"],
+    [class*="pl-"],
+    [class*="post-"],
+    [class*="setting-"],
+    [class*="sort-caret"],
+    [class*="view-"],
+    [class*="w3-"],
+    [class*='wysiwyg-macro-*'],
+    [role=presentation]
+  ),
+  .gr-app, .sidebar, div[class*="timeline"],
+  div#book-search-input > input, span.algolia-autocomplete > input {
+    font-family: var(--font-family-sans) !important;
+  }
+
+
+  /* ── global settings ────────────────────────────────────── */
+  p:is([node="[object Object]"]) {
+    font-family: var(--font-family-mono) !important;
+  }
+
+  p, h1, h2, h3, h4, h5, h6,
+  code :where(h1, h2, h3, h4, h5, h6),
+  pre :is(h1, h2, h3, h4, h5, h6),
+  button#btnSubmit, div.k-widget.k-grid *,
+  div.breadcrumbs *, ul.one-third *,
+  ul.code_language_large *, .a-center,
+  [class*="grepper_answer_button"] *,
+  [class*="answer_title"] {
+    font-family: var(--font-family-sans) !important;
+  }
+  h1.page-header :not([class*="hidden-"]),
+  h1 span.pre,
+  [class*="header"]:not(
+    [class*="content"],
+    [class*="navbar-"]
+  ) > h1:not(
+    [title="Class Descriptor"]
+  ) :not(button):not(button+div):not(
+    a[class*="Tab"],
+    a[class*="tab"],
+    i[class*="fa"],
+    [class*="aui-dropdown2"] *,
+    [class*="badge"]
+    [class*="btn"],
+    [class*="logo"],
+    [class*="text-normal"] *,
+    [class*="text-xs"],
+  ),
+  h1#gh-pages code,
+  div[class*="headline"]:not(
+    [class*="-view-model"]
+    [class*="container__"],
+  ) *:not(
+    [class*="bot-status-badge"]
+    [class*="btn"],
+    [class*="byline__"],
+    [class*="container__"],
+    [class*="headline__"],
+    [class*="timestamp"],
+  ),
+  div#click-to-connect > div > :not(h1):not(h2),
+  .markdown-body h1, .markdown-section h1 {
+    font-size: var(--font-size-h1) !important;
+    font-weight: 500 !important;
+  }
+
+   h1 > code, h1 > a > code,
+  *:not(blockquote) > h2:not(
+      [class*="f4"]                                           /* github fork list */
+   ) >
+    :is(
+      a:not([class*="btn"], [class*="css-"]),
+      span:not([class*="-name"], [class*="btn"], [class*="separator"], [class*="js-path"]),
+      *:not(code)
+   ):not(
+     a[data-hydro-click],[role*="button"]                    /* data-hydro-click: https://github.com/trending */
+   ):not(button ~ span),                                     /* button ~ span: github - Expand file tree      */
+  h2#gitbook-cli > code, h2#gh-pages code,
+  .markdown-body h2:not([class*="btn"]):not([dir*="auto"]),
+  .markdown-section h1 > code,
+  .markdown-section h2:not([class*="btn"]):not([dir*="auto"]),
+  .markdown-section h2 > mark,
+  .markdown-section h2 > a:not([class*="btn"]) {
+    font-size: var(--font-size-h2) !important;
+    font-weight: 400 !important;
+  }
+  h2 > code, h2 > a > code,
+  .markdown-section h2 > code,
+  h3:not(:has(button)):not(
+    [class*="btn"],
+    [class*="f5"]
+    [class*="ghx-name"],
+    [class*="gr-access-section"],
+  ) div:not(
+    [class*="react-directory-truncate"],
+    [class*="truncate"]
+  ),
+  .markdown-body h3 *,
+  .markdown-section h3,
+  .markdown-section h3 > mark,
+  .markdown-section h3 > a:not([class*="btn"]) {
+    font-size: var(--font-size-h3) !important;
+    font-weight: 400 !important;
+  }
+  h3 > code, h3:not([class*="DiffFileHeader-module_"] h3) > a > code, h3#gh-pages code,
+  .markdown-section h3 code,
+  h4:not([class*="btn"]):not([class*="panel-title"]):not([class*="flex-1"]):not([class*="name-copy"]),
+  section[role*="region"] h3,
+  .blockList > h3,
+  .markdown-section h3 > code,
+  .markdown-body h4 *,
+  .markdown-section h4 *,
+  .markdown-section h4 > mark,
+  .markdown-section h4 > a:not([class*="btn"]) {
+    font-size: var(--font-size-h4) !important;
+    font-weight: 400 !important;
+  }
+
+  h4 > code, h4 > a > code, h4#gh-pages code,
+  .markdown-section h4 > code {
+    font-size: var(--font-size-h5);
+    font-weight: 400 !important;
+  }
+
+  /* ── code block ─────────────────────────────────────────── */
+  .markdown-body :is(code, code *),
+  [class*="markdown"]:not([class*="markdown-section"]) code {
+    font-family: var(--font-family-mono) !important;
+  }
+
+  pre:not(.pm4ll46 > pre, #char-bar pre, [class*="dashboard-break-word"], [class*="masked-font"], [class*="_13"], :has(.sha-block)) {
+    /* apply mono font to `pre` that meets the criteria ── `&` == `pre:not(...)` */
+    &,
+    /* remove the mono font from a specific element inside the `pre` tag */
+    & *:not(ul, ol, kbd, p[class*="paragraph"], [class*="heading"], [class*="_1t"] *),
+    & code,
+    &.code * {
+      font-family: var(--font-family-mono) !important;
+      font-size: var(--font-size-small-mono) !important;
+    }
+  }
+
+  .code-line,
+  .markdown-body :is(pre, pre *),
+  input :where(code, pre),
+  textarea :where(code, pre),
+  [class*="highlight"] :where(pre, code),
+  .blob-code, .blob-code-inner, .blob-num,                    /* github */
+  .editor *:not(span):not([class*="confluence"]):not([id*="breadcrumbs"] *):not([class*="toolbar-split"] *):not([class*="aui-"] *),
+  div.ace_content,
+  .blob-code-addition *, .blob-code-inner *,
+  .solarized-dark,
+  .EnlighterJS *,
+  .js-file-line *,
+  .changeset-message,
+  .node-log-frame,
+  .lines-content *,
+  tr.line_holder *,
+  div[class*="hljs-"] *,
+  [class="code"],
+  [class*="linenumber"] *, [class*="blob"] code,
+  [class*="terminal"]:not([class*="main-view"]) *:not([class*="icon"]):not([class*="num-votes"]):not([class*="xterm-"]):not([class*="bar__title"]), #terminal *:not([class*="icon"]),
+  .CodeBlock pre[class*=language-]>code * {
+    font-family: var(--font-family-mono) !important;
+    font-size: var(--font-size-big-mono) !important;
+    line-height: 1.5em !important;
+  }
+
+
+  /* ── ace editor (bootsnipp.com, etc.) ───────────────────── */
+  [class*="ace_"]:not([class*="workspace"], [class*="face_"], [class*="workplace_"]),
+  [class*="ace_"]:not([class*="workspace"], [class*="face_"], [class*="workplace_"])~div,
+  [class*="ace_"]:not([class*="workspace"], [class*="face_"], [class*="workplace_"])+div,
+  [class*="ace_"]:not([class*="workspace"], [class*="face_"], [class*="workplace_"]) *,
+  div#playground-container * {
+    font-family: var(--font-family-mono) !important;
+    font-size: var(--font-size-normal-mono) !important;
+  }
+
+
+  /* ── others: github bits (readme-toc / BorderGrid / gogh github.io) ── */
+  [data-target*="readme-toc.content"] *,
+  .css-truncate a, .BorderGrid-cell,
+  .terminal .bar .bar__title {                                /* https://gogh-co.github.io/Gogh */
+    font-family: var(--font-family-sans) !important;
+  }
+
+  /* ── icon settings ──────────────────────────────────────── */
+  i[class*="fa-"],
+  span[class*="glyphicon"],
+  span[class*="style_Navbar"], span[class*="avatar"]:not([class*="gravatar-text"]), span[class*="icon-"],
+  i[class*="s-fa-"],
+  i[class*="material-icons-"],
+  i[class*="google-material-icons"],
+  i[class*="iconfont"],
+  i[class*="ms-Button-icon"], [class*="ms-Button"], .icon-530,
+  [class*="g-button-right"] > [class*="icon-"],
+  [class^="u-icon-"],
+  .codicon[class*="codicon-"],                                /* gitpod */
+  span[class^="icon"]::before,                                /* https://www4.benefitsolver.com/benefits/BenefitSolverView */
+  div.content-post-body-content p,
+  .google-symbols,
+  .docon {                                                    /* microsoft doc */
+    font-family: var(--font-family-icon) !important;
+  }
+
+  .fa, .section-directions, .fontHeadlineLarge, .file-name-idw,
+  .button:not(a):not(
+    [class*="aui-"],
+    [value],
+    [href="#"],
+    [class*="feedback"],
+    #banner-dismiss
+  ):not(
+    :is([class*="gravatar-form__content"] .button),
+    :is([class*="table__align"] .button)
+  ),
+  .btn:not(
+    a,
+    .btn-default,
+    [class*="mb-3"],
+    [class*="form_"],
+    [class*="-link"],
+    [class*="text-"],
+    [class*="-outline-"],
+    [data-toggle="charmap"],
+    [class*="animated"]
+  ):not(
+    :is(.d-flex > .btn),
+    :is(.threat-hunting-homepage-button-group > .btn),
+    :is(.btn-group > .btn),
+    :is(.text-right > .btn),
+    :is(.modal-body > .btn),
+    :is([class*="card"] .btn)
+  ) {
+    font-family: var(--font-family-icon) !important;
+  }
+
+} /* @-moz-document: github general */
+
+
+@-moz-document regexp("https?://[^\\/]*github\\.(com|io)((?!\\/login\\/device.*).)*$") {
+
+  /**
+   * github.com / github.io
+  **/
+
+  /* ── disable token warning ───────────────────────────────── */
+  [class*="rgh-"] .flash.flash-error {
+    display: none !important;
+  }
+
+  html {
+    --font-size-github-mono: var(--font-size-normal-mono);
+    --fontStack-monospace: var(--font-family-mono) !important;
+    --fontStack-system: var(--font-family-sans) !important;
+    --fontStack-sansSerif: var(--font-family-sans) !important;
+    --body-font-size: var(--font-size-github-mono) !important;
+    --font-size-small: var(--font-size-github-mono) !important;
+  }
+
+  body {
+    /* github cursor position issue */
+    --font-size-github-mono: var(--font-size-normal-mono);
+    --fontStack-monospace: var(--font-family-mono) !important;
+    --fontStack-system: var(--font-family-sans) !important;
+    --fontStack-sansSerif: var(--font-family-sans) !important;
+    --body-font-size: var(--font-size-github-mono) !important;
+    --font-size-small: var(--font-size-github-mono) !important;
+  }
+
+  /* ── github.com overrides ───────────────────────────────── */
+  /* ── PR review comment code: smaller font ───────────────── */
+  /* conversation page (uses standard .blob-code classes) */
+  .review-thread-component .blob-code-inner,
+  .review-thread-component .blob-code-inner *,
+  .review-thread-component .blob-code,
+  .review-thread-component .blob-code *,
+  .review-thread-component .blob-num,
+  /* diff page: copilot suggestion cards */
+  [class*="AutomatedReview"] [class*="DiffLines"],
+  [class*="AutomatedReview"] [class*="DiffLines"] *,
+  [class*="AutomatedReview"] .blob-code-inner,
+  [class*="AutomatedReview"] .blob-code-inner *,
+  [class*="AutomatedReview"] .blob-code,
+  [class*="AutomatedReview"] .blob-code *,
+  [class*="AutomatedReview"] .blob-num {
+    font-size: var(--font-size-small-mono) !important;
+  }
+
+  pre > code, .markdown-body .highlight * {                               /* github code block */
+    font-size: var(--font-size-github-mono) !important;
+  }
+
+  .markdown-title,
+  .markdown-section :is(p, h1, h2, h3, h4, h5, h6),
+  .markdown-body, .markdown-body :is(p, h1, h2, h3, h4, h5, h6),
+  div.list-style-none,
+  .page-header,
+  div[class*="style_CardRow"] h1,
+  .d-flex.flex-self-stretch,
+  a.dropdown-item,
+  [class*="headline"],
+  [class*="footer"],
+  .d-flex.flex-wrap.flex-justify-end,
+  label.header-search-wrapper > input,
+  div.d-none.d-sm-block > span:is([class*="js-path-segment"]):not([class*="js-repo-root"]) > a,
+  input:is([id*="password"], [id*="login"]) {
+    font-family: var(--font-family-sans) !important;
+  }
+  /* ── for selection mismatches issue [class*="code"]:not([class*="react"]) ───────── */
+  textarea#read-only-cursor-text-area,
+  [class*='react-line'],
+  [class*='react-code']:not([class*="-view"]),
+  div[class*="styled-input-content"],                         /* github issue search */
+  div.QueryBuilder-StyledInputContainer,                      /* github search/query input box */
+  .QueryBuilder-StyledInputContainer *,                       /* github search/query input box */
+  .react-code-lines *,
+  div.form-group textarea,
+  [name^="ssh_key"],
+  input:is([readonly="readonly"]),
+  input.FormControl-input:is([aria-controls^="query-builder-"]),
+  textarea#secret_value, input#secret_name,
+   /* ── new issues filter input: fix cursor/font mismatch */
+  [class*="Filter-module"] input,
+  [class*="Input-module"] input[name="repository-input"],
+  [class*="Input-module"] span {
+    font-family: var(--font-family-mono) !important;
+    font-size: var(--font-size-github-mono) !important;
+  }
+
+  /* ── new react diff view (PR/commit/compare): all languages ── */
+  code[class*="diff-text"],                                  /* code cell + hunk header cell */
+  code[class*="diff-text"] *,                                /* diff-text-inner, syntax/whitespace spans, +/- marker */
+  td[class*="diff-line-number"] {                            /* line-number gutter */
+    font-family: var(--font-family-mono) !important;
+    font-size: var(--font-size-github-mono) !important;
+  }
+
+
+  /*  [class="TimelineItem-body"] code * */
+  div[class*="code-scanning-"]:not(
+    [class*="js-"],
+    [class*="timeline"]
+  ) {
+    font-family: 'FantasqueSansM Nerd Font', 'RecMonoCasual Nerd Font Mono', 'VictorMono Nerd Font Mono', 'LXGWWenKaiMono Nerd Font Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace !important;
+    font-size: var(--font-size-github-mono) !important;
+  }
+
+  /* issue comments */
+  [class*="NewMarkdownViewer-module__safe-html-box"] {
+    font-size: 17px !important;
+  }
+
+  /* github: go to file */
+  .HVNDY { font-family: var(--font-family-sans) !important; }
+  div[class*="Box-sc-"], div.ewmGxV { font-family: var(--font-family-mono) !important; }
+
+  /* github revision number */
+  a[href*="/commit/"][class*="prc-Button-ButtonBase"] [class*="prc-Button-Label"],
+  .Link--secondary span {
+    font-family: var(--font-family-mono) !important;
+  }
+  a:is([class*="-author"], [class*="user"]) {
+    font-family: var(--font-family-handwritten) !important;
+    font-size: var(--font-size-normal-sans);
+  }
+  .lh-condensed > a:not(
+    [data-hydro-click],
+    [data-hovercard-url],
+    [class*="color-fg-"],
+    [class*="Link--"]
+  ) {
+    font-family: 'VictorMono Nerd Font Mono', 'LXGWWenKaiMono Nerd Font Mono',  ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace !important;
+    font-weight: bold;
+  }
+  .d-flex.flex-wrap.flex-justify-end [rel*="author"],
+  header.pagehead h1,
+  span.js-repo-root,
+  div.vcard-names-container h1 .vcard-fullname,
+  [data-hovercard-type="user"]  span.AppHeader-context-item-label,
+  span:is([class^="AppHeader-context-item-label"]) {
+    font-family: var(--font-family-handwritten) !important;
+    font-size: 24px !important;
+  }
+  h3.text-normal a.author {
+    padding-top: 0px !important;
+  }
+  h2.breadcrumb, .separator {
+    font-size: 16px !important;
+  }
+  .markdown-body.js-comment-body p,
+  h3.text-normal a.author,
+  .d-none.d-sm-block,
+  h2:is([id*="blob-path"]) {
+    font-size: 18px !important;
+  }
+  .d-flex.flex-wrap.flex-justify-end [rel*="author"] {
+    font-size: 24px !important;
+  }
+   /* payment method */
+  .FormControl-input, .FormControl-select, .FormControl-textarea {
+    font-size: var(--text-body-size-medium, 0.875rem) !important;
+    line-height: var(--text-body-lineHeight-medium, 1.4285) !important;
+  }
+  select.select-input {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+  .book.font-size-2 .book-body .page-inner section {          /* https://psyteachr.github.io */
+    font-size: 14px !important;
+  }
+
+  /* < Prev 1 2 3 4 5 Next > pagination */
+  a[rel="prev"], a[rel="next"],
+  a[rel="prev"]::before, a[rel="next"]::after {
+    font-size: var(--font-size-small-sans) !important;
+    font-family: var(--font-family-handwritten) !important;
+  }
+  a[rel="prev"]::before, a[rel="next"]::after {
+    padding-top: 20px !important;
+  }
+  .gaSbTj {
+    font-size: var(--font-size-small-sans) !important;
+    font-family: var(--font-family-sans) !important;
+  }
+
+  /* ── search icon padding ─────────── */
+  /**
+   *  - .AppHeader .AppHeader-globalBar .AppHeader-search .AppHeader-search-kbd
+   *  - .form-select                   : github drop-down list
+  **/
+  div.eIjUrw, div.qQkTK,                                      /* github search repositories */
+  .line-number, .gr-diff,                                     /* github codeblock */
+  .line:not([id*="table"]),                                   /* github codeblock && https://codeberg.org/vhs/jekyll-money */
+  input:is([id="repos-list-filter-input"]) {
+    font-family: var(--font-family-mono) !important;
+    font-size: var(--font-size-big-mono) !important;
+    line-height: 1.5em !important;
+  }
+  .AppHeader-search-kbd {
+    align-content: center !important;
+    height: var(--font-size-big-mono) !important;
+    font-size: var(--font-size-big-mono) !important;
+  }
+  .AppHeader-searchButton {                                   /* type `/` to search */
+    padding-left: 2em !important;
+  }
+
+  /* ── others ─────────── */
+  span.cm-comment,                                            /* gist edit comment code */
+  span.pl-c {                                                 /* github comment code */
+    font-style: italic !important;
+  }
+
+  /* ── gist.github.com ─────────── */
+  .select-sm {                                                /* gist select drop-down list */
+    font-size: 12px !important;
+  }
+  a.wb-break-all strong {                                     /* gist.github.com */
+    font-family: var(--font-family-sans) !important;
+  }
+  h1.wb-break-word.f3 > span.author > a,                      /* ╮                 */
+  h3.text-normal a.author {                                   /* ╯ gist.github.com */
+    font-family: var(--font-family-handwritten) !important;
+    font-size: 24px !important;
+  }
+  h1:is([class*="text-normal"]):not([id*="summary-val"]) {    /* gist.github.com */
+    font-size: var(--font-size-h2) !important;
+    font-weight: 400 !important;
+  }
+
+  /* ── hidden GitHub：hidden「xxx had recent pushes」 ─────────── */
+  /* check details in : https://github.com//${OWNRE}/${REPO}/show_partial?partial=tree%2Frecently_touched_branches_list */
+  div[class*="RecentlyTouchedBranches-module__Flash"][data-variant="warning"],
+  div[data-url*="recently_touched_branches_list"] {
+    display: none;
+  }
+
+  /* ── github.io (github pager / gitbook) ─────────────────── */
+  .markdown-section code {
+    font-family: var(--font-family-mono) !important;
+    font-size: var(--font-size-small-mono) !important;
+  }
+  .markdown-section *:not(mark, span, h1, h2, h3, h4, a>code, code) {
+    font-size: 16px !important;
+  }
+  .markdown-section a,
+  .book-summary a,
+  div[type*="text"],
+  li li,
+  ul li,
+  ol li,
+  #book-search-input>input,
+  textarea[id*="commento-textarea"],
+  a.btn,
+  div.tags>b,
+  input[type=checkbox]+label,
+  .commento-submit-button,
+  div[class*="language-liquid"]~table *,
+  .book.font-family-1 {
+    font-family: var(--font-family-sans) !important;
+  }
+
+  /* gitbook */
+  span.token.comment {                                        /* comment code */
+    font-style: italic !important;
+    color: #b9b9b9 !important;
+  }
+  span.token.punctuation { color: #93a1a1 !important; }
+  .page-inner { max-width: min(90vw, calc(100% - 200px)) !important; }   /* reserve nav-arrow gutter; see page-inner rule above */
+
+  .code-wrapper pre > code > span.code-line:before {          /* line number */
+    font-family: var(--font-family-mono) !important;
+  }
+  /*
+  .token.entity { background: #2d3143; }
+  .panel-default>.panel-heading { color: #eee8d5; }           * gitbook dark mode *
+  */
+
+} /* @-moz-document: github.com && github.io */
