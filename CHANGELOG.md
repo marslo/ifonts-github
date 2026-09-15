@@ -1,3 +1,9 @@
+## [1.0.2](https://github.com/marslo/ifonts-github/compare/v1.0.1...v1.0.2) (2026-09-15)
+
+### Bug Fixes
+
+* **pr**, **h2**: exclude `PR file change inline review header` (`InlineReviewThread-*`) from <h2> font settings ([e083263](https://github.com/marslo/ifonts-github/commit/e08326352870b647e040c8d46e6ac0b94e154673))
+
 ## [1.0.1](https://github.com/marslo/ifonts-github/compare/v1.0.0...v1.0.1) (2026-09-11)
 
 ### Bug Fixes
