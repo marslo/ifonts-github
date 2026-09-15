@@ -7,7 +7,7 @@
 @homepageURL    https://github.com/marslo/ifonts-github
 @updateURL      https://github.com/marslo/ifonts-github/raw/main/ifonts-github.user.css
 @advanced       text font-family-sans        "Sans Fonts"        ""Titillium Nerd Font Upright", "Titillium Nerd Font", "Gisha Nerd Font", "Recursive Sans Casual Static Nerd Font", "Yoshe Shayufeite Nerd Font", "MicrosoftYaHei Nerd Font", "LXGWBright Nerd Font", "Qian Li Jiang Shan Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Titillium Up", Titillium, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Font Text""
-@advanced       text font-family-mono        "Mono Fonts"        ""BlexMonoLig Nerd Font Mono", "OperatorMonoSSmLig Nerd Font Mono", "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "Lekton Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas, "Yozai Nerd Font""
+@advanced       text font-family-mono        "Mono Fonts"        ""BlexMonoLig Nerd Font Mono", BlexMonoLig Nerd Font Mono Book", "OperatorMonoSSmLig Nerd Font Mono", "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "Lekton Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas, "Yozai Nerd Font""
 @advanced       text font-family-handwritten "Handwritten Fonts" ""Papyrus Nerd Font", fantasy"
 @advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Google Symbols", "Font Awesome 7 Pro", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "Font Awesome 6 Pro", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, iconfont-luckysheet, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", geico, marvell-icons, icomoon, element-icons, olive-icons, "SF Pro Icons", Iconochive-Regular, sans-serif"
 ==/UserStyle== */
@@ -189,15 +189,17 @@
 
    h1 > code, h1 > a > code,
   *:not(blockquote) > h2:not(
-      [class*="f4"]                                           /* github fork list */
+      [class*="f4"],                                          /* github fork list */
+      [class*="InlineReviewThread"]                           /* PR file change inline review header */
    ) >
     :is(
-      a:not([class*="btn"], [class*="css-"]),
-      span:not([class*="-name"], [class*="btn"], [class*="separator"], [class*="js-path"]),
-      *:not(code)
+      a:not([class*="css-"]),
+      span:not([class*="-name"], [class*="separator"], [class*="js-path"]),
+      *:not(code):not([class*="btn"])
    ):not(
-     a[data-hydro-click],[role*="button"]                    /* data-hydro-click: https://github.com/trending */
-   ):not(button ~ span),                                     /* button ~ span: github - Expand file tree      */
+     a[data-hydro-click], [role*="button"],                   /* data-hydro-click: https://github.com/trending */
+     button ~ span                                            /* button ~ span: github - Expand file tree */
+   ),
   h2#gitbook-cli > code, h2#gh-pages code,
   .markdown-body h2:not([class*="btn"]):not([dir*="auto"]),
   .markdown-section h1 > code,
