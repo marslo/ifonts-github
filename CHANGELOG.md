@@ -1,3 +1,9 @@
+## [1.0.3](https://github.com/marslo/ifonts-github/compare/v1.0.2...v1.0.3) (2026-09-15)
+
+### Others
+
+* **BlexMonoLig**: customize the `BlexMonoLigNFM-*` to: Book(350) ⇾ normal; Text(450) ⇾ bold; ([105b1cb](https://github.com/marslo/ifonts-github/commit/105b1cb02ba861b0512433606e48ba28bbcbce8f))
+
 ## [1.0.2](https://github.com/marslo/ifonts-github/compare/v1.0.1...v1.0.2) (2026-09-15)
 
 ### Bug Fixes
