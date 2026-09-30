@@ -7,7 +7,7 @@
 @homepageURL    https://github.com/marslo/ifonts-github
 @updateURL      https://github.com/marslo/ifonts-github/raw/main/ifonts-github.user.css
 @advanced       text font-family-sans        "Sans Fonts"        ""Titillium Nerd Font Upright", "Titillium Nerd Font", "Gisha Nerd Font", "Recursive Sans Casual Static Nerd Font", "Yoshe Shayufeite Nerd Font", "MicrosoftYaHei Nerd Font", "LXGWBright Nerd Font", "Qian Li Jiang Shan Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Titillium Up", Titillium, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Font Text""
-@advanced       text font-family-mono        "Mono Fonts"        "Blex, "BlexMonoLig Nerd Font Mono", BlexMonoLig Nerd Font Mono Book", "OperatorMonoSSmLig Nerd Font Mono", "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "Lekton Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas, "Yozai Nerd Font""
+@advanced       text font-family-github-mono "Mono Fonts"        ""Blex", "BlexMonoLig Nerd Font Mono", "OperatorMonoSSmLig Nerd Font Mono", "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "Lekton Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas, "Yozai Nerd Font""
 @advanced       text font-family-handwritten "Handwritten Fonts" ""Papyrus Nerd Font", fantasy"
 @advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Google Symbols", "Font Awesome 7 Pro", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "Font Awesome 6 Pro", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, iconfont-luckysheet, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", geico, marvell-icons, icomoon, element-icons, olive-icons, "SF Pro Icons", Iconochive-Regular, sans-serif"
 ==/UserStyle== */
@@ -38,7 +38,7 @@
 
   :root {
     --font-family-sans: /*[[font-family-sans]]*/;
-    --font-family-mono: /*[[font-family-mono]]*/;
+    --font-family-github-mono: /*[[font-family-github-mono]]*/;
     --font-family-mono-accent: 'VictorMono Nerd Font Mono', 'Lekton Nerd Font Mono', 'LXGWWenKaiMono Nerd Font Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
     --font-family-handwritten: /*[[font-family-handwritten]]*/;
     --font-family-icon: /*[[font-family-icon]]*/;
@@ -68,7 +68,7 @@
   }
 
   body {
-    font-family: var(--font-family-sans), var(--font-family-mono) !important;
+    font-family: var(--font-family-sans), var(--font-family-github-mono) !important;
   }
 
   /**
@@ -133,7 +133,7 @@
 
   /* ── global settings ────────────────────────────────────── */
   p:is([node="[object Object]"]) {
-    font-family: var(--font-family-mono) !important;
+    font-family: var(--font-family-github-mono) !important;
   }
 
   p, h1, h2, h3, h4, h5, h6,
@@ -192,13 +192,14 @@
       span:not([class*="-name"], [class*="separator"], [class*="js-path"]),
       *:not(code):not([class*="btn"])
    ):not(
+     [class*="text-normal"], [class*="text-normal"] *,        /* PR floating title */
      a[data-hydro-click], [role*="button"],                   /* data-hydro-click: https://github.com/trending */
      button ~ span                                            /* button ~ span: github - Expand file tree */
    ),
   h2#gitbook-cli > code, h2#gh-pages code,
   .markdown-body h2:not([class*="btn"]):not([dir*="auto"]),
   .markdown-section h1 > code,
-  .markdown-section h2:not([class*="btn"]):not([dir*="auto"]),
+  .markdown-section h2:not([class*="btn"], [dir*="auto"]),
   .markdown-section h2 > mark,
   .markdown-section h2 > a:not([class*="btn"]) {
     font-size: var(--font-size-h2) !important;
@@ -244,7 +245,7 @@
   /* ── code block ─────────────────────────────────────────── */
   .markdown-body :is(code, code *),
   [class*="markdown"]:not([class*="markdown-section"]) code {
-    font-family: var(--font-family-mono) !important;
+    font-family: var(--font-family-github-mono) !important;
   }
 
   pre:not(.pm4ll46 > pre, #char-bar pre, [class*="dashboard-break-word"], [class*="masked-font"], [class*="_13"], :has(.sha-block)) {
@@ -254,7 +255,7 @@
     & *:not(ul, ol, kbd, p[class*="paragraph"], [class*="heading"], [class*="_1t"] *),
     & code,
     &.code * {
-      font-family: var(--font-family-mono) !important;
+      font-family: var(--font-family-github-mono) !important;
       font-size: var(--font-size-small-mono) !important;
     }
   }
@@ -264,23 +265,21 @@
   input :where(code, pre),
   textarea :where(code, pre),
   [class*="highlight"] :where(pre, code),
-  .blob-code, .blob-code-inner, .blob-num,                    /* github */
   .editor *:not(span):not([class*="confluence"]):not([id*="breadcrumbs"] *):not([class*="toolbar-split"] *):not([class*="aui-"] *),
   div.ace_content,
-  .blob-code-addition *, .blob-code-inner *,
+  .blob-code-addition *,
   .solarized-dark,
   .EnlighterJS *,
-  .js-file-line *,
   .changeset-message,
   .node-log-frame,
   .lines-content *,
   tr.line_holder *,
   div[class*="hljs-"] *,
   [class="code"],
-  [class*="linenumber"] *, [class*="blob"] code,
-  [class*="terminal"]:not([class*="main-view"]) *:not([class*="icon"]):not([class*="num-votes"]):not([class*="xterm-"]):not([class*="bar__title"]), #terminal *:not([class*="icon"]),
+  [class*="linenumber"] *,
+  [class*="terminal"]:not([class*="main-view"]) *:not([class*="icon"], [class*="num-votes"], [class*="xterm-"], [class*="bar__title"]), #terminal *:not([class*="icon"]),
   .CodeBlock pre[class*=language-]>code * {
-    font-family: var(--font-family-mono) !important;
+    font-family: var(--font-family-github-mono) !important;
     font-size: var(--font-size-big-mono) !important;
     line-height: 1.5em !important;
   }
@@ -292,7 +291,7 @@
   [class*="ace_"]:not([class*="workspace"], [class*="face_"], [class*="workplace_"])+div,
   [class*="ace_"]:not([class*="workspace"], [class*="face_"], [class*="workplace_"]) *,
   div#playground-container * {
-    font-family: var(--font-family-mono) !important;
+    font-family: var(--font-family-github-mono) !important;
     font-size: var(--font-size-normal-mono) !important;
   }
 
@@ -370,7 +369,7 @@
 
   html {
     --font-size-github-mono: var(--font-size-normal-mono);
-    --fontStack-monospace: var(--font-family-mono) !important;
+    --fontStack-monospace: var(--font-family-github-mono) !important;
     --fontStack-system: var(--font-family-sans) !important;
     --fontStack-sansSerif: var(--font-family-sans) !important;
     --body-font-size: var(--font-size-github-mono) !important;
@@ -380,7 +379,7 @@
   body {
     /* github cursor position issue */
     --font-size-github-mono: var(--font-size-normal-mono);
-    --fontStack-monospace: var(--font-family-mono) !important;
+    --fontStack-monospace: var(--font-family-github-mono) !important;
     --fontStack-system: var(--font-family-sans) !important;
     --fontStack-sansSerif: var(--font-family-sans) !important;
     --body-font-size: var(--font-size-github-mono) !important;
@@ -406,7 +405,9 @@
     font-size: var(--font-size-small-mono) !important;
   }
 
-  pre > code, .markdown-body .highlight * {                               /* github code block */
+  pre > code, .markdown-body .highlight *,                                             /* github - code block */
+  .blob-code, .blob-code-inner, .blob-code-inner *, [class*="blob"] code, .blob-num,   /* github - preview workflow file */
+  .js-file-line * {                                                                    /* github - preview workflow file */
     font-size: var(--font-size-github-mono) !important;
   }
 
@@ -443,7 +444,7 @@
   [class*="Filter-module"] input,
   [class*="Input-module"] input[name="repository-input"],
   [class*="Input-module"] span {
-    font-family: var(--font-family-mono) !important;
+    font-family: var(--font-family-github-mono) !important;
     font-size: var(--font-size-github-mono) !important;
   }
 
@@ -451,7 +452,7 @@
   code[class*="diff-text"],                                  /* code cell + hunk header cell */
   code[class*="diff-text"] *,                                /* diff-text-inner, syntax/whitespace spans, +/- marker */
   td[class*="diff-line-number"] {                            /* line-number gutter */
-    font-family: var(--font-family-mono) !important;
+    font-family: var(--font-family-github-mono) !important;
     font-size: var(--font-size-github-mono) !important;
   }
 
@@ -472,12 +473,12 @@
 
   /* github: go to file */
   .HVNDY { font-family: var(--font-family-sans) !important; }
-  div[class*="Box-sc-"], div.ewmGxV { font-family: var(--font-family-mono) !important; }
+  div[class*="Box-sc-"], div.ewmGxV { font-family: var(--font-family-github-mono) !important; }
 
   /* github revision number */
   a[href*="/commit/"][class*="prc-Button-ButtonBase"] [class*="prc-Button-Label"],
   .Link--secondary span {
-    font-family: var(--font-family-mono) !important;
+    font-family: var(--font-family-github-mono) !important;
   }
   a:is([class*="-author"], [class*="user"]) {
     font-family: var(--font-family-handwritten) !important;
@@ -552,7 +553,7 @@
   .line-number, .gr-diff,                                     /* github codeblock */
   .line:not([id*="table"]),                                   /* github codeblock && https://codeberg.org/vhs/jekyll-money */
   input:is([id="repos-list-filter-input"]) {
-    font-family: var(--font-family-mono) !important;
+    font-family: var(--font-family-github-mono) !important;
     font-size: var(--font-size-big-mono) !important;
     line-height: 1.5em !important;
   }
@@ -597,7 +598,7 @@
 
   /* ── github.io (github pager / gitbook) ─────────────────── */
   .markdown-section code {
-    font-family: var(--font-family-mono) !important;
+    font-family: var(--font-family-github-mono) !important;
     font-size: var(--font-size-small-mono) !important;
   }
   .markdown-section *:not(mark, span, h1, h2, h3, h4, a>code, code) {
@@ -629,7 +630,7 @@
   .page-inner { max-width: min(90vw, calc(100% - 200px)) !important; }   /* reserve nav-arrow gutter; see page-inner rule above */
 
   .code-wrapper pre > code > span.code-line:before {          /* line number */
-    font-family: var(--font-family-mono) !important;
+    font-family: var(--font-family-github-mono) !important;
   }
   /*
   .token.entity { background: #2d3143; }
