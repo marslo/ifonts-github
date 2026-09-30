@@ -1,3 +1,9 @@
+## [1.0.4](https://github.com/marslo/ifonts-github/compare/v1.0.3...v1.0.4) (2026-09-30)
+
+### Bug Fixes
+
+* **Blex**: fix the `Blex` local fonts in global variable; and using `--font-family-github-mono` instead of `--font-family-mono` for code blocks ([2de039c](https://github.com/marslo/ifonts-github/commit/2de039cac8ddc023c7b57f7400a2475dab94b144))
+
 ## [1.0.3](https://github.com/marslo/ifonts-github/compare/v1.0.2...v1.0.3) (2026-09-15)
 
 ### Others
