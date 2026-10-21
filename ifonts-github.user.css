@@ -48,8 +48,8 @@
     --font-size-normal-sans: 18px;
     --font-size-small-sans: 15px;
 
-    --font-size-big-mono: 18px;
-    --font-size-normal-mono: 16px;
+    --font-size-big-mono: 19px;
+    --font-size-normal-mono: 17px;
     --font-size-small-mono: 15px;
     --font-size-xsmall-mono: 14px;
 
@@ -193,6 +193,7 @@
       *:not(code):not([class*="btn"])
    ):not(
      [class*="text-normal"], [class*="text-normal"] *,        /* PR floating title */
+     [class*="text-semibold"], [class*="text-semibold"] *,    /* PR floating title */
      a[data-hydro-click], [role*="button"],                   /* data-hydro-click: https://github.com/trending */
      button ~ span                                            /* button ~ span: github - Expand file tree */
    ),
@@ -222,7 +223,7 @@
     font-size: var(--font-size-h3) !important;
     font-weight: 400 !important;
   }
-  h3 > code, h3:not([class*="DiffFileHeader-module_"] h3) > a > code, h3#gh-pages code,
+  h3 > code, h3:not([class*="DiffFileHeader-module_"] h3):not([class*="file-name-truncate__"]) > a > code, h3#gh-pages code,
   .markdown-section h3 code,
   h4:not([class*="btn"]):not([class*="panel-title"]):not([class*="flex-1"]):not([class*="name-copy"]),
   section[role*="region"] h3,
