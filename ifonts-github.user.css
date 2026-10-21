@@ -433,6 +433,7 @@
   [class*='react-line'],
   [class*='react-code']:not([class*="-view"]),
   div[class*="styled-input-content"],                         /* github issue search */
+  [class*="styled-input-container"] :is(input, span),         /* issues/PRs filter: input + width-measure span, same font as styled-input-content */
   div.QueryBuilder-StyledInputContainer,                      /* github search/query input box */
   .QueryBuilder-StyledInputContainer *,                       /* github search/query input box */
   .react-code-lines *,
