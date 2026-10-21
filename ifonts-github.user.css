@@ -593,7 +593,7 @@
 
   /* ── hidden GitHub：hidden「xxx had recent pushes」 ─────────── */
   /* check details in : https://github.com//${OWNRE}/${REPO}/show_partial?partial=tree%2Frecently_touched_branches_list */
-  div[class*="RecentlyTouchedBranches-module__Flash"][data-variant="warning"],
+  div[class*="RecentlyTouchedBranches-module"][class*="Flash"][data-variant="warning"],  /* css-module class: `…-module__Flash` → `…-module_<hash>_Flash` */
   div[data-url*="recently_touched_branches_list"] {
     display: none;
   }
