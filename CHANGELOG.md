@@ -1,3 +1,17 @@
+## [1.0.6](https://github.com/marslo/ifonts-github/compare/v1.0.5...v1.0.6) (2026-10-21)
+
+### Bug Fixes
+
+* **filter**: use mono font for the issues/PRs filter input to align the caret with the styled text ([12a5110](https://github.com/marslo/ifonts-github/commit/12a511038580ab653e191f237d61ca4a81739d87))
+* **github**: hide the recent-pushes banner again by matching the hashed `RecentlyTouchedBranches` css-module class; and update readme ([655e540](https://github.com/marslo/ifonts-github/commit/655e54096337006a70c6bcae5fa70b99d8462622))
+  - match `RecentlyTouchedBranches-module` and `Flash` as separate substrings
+  - cover the new `…-module_<hash>_Flash` class and the old `…-module__Flash` one
+  - convert `README.org` headings, lists, links and quote to markdown
+
+### Documentation
+
+* update README ([7a2f430](https://github.com/marslo/ifonts-github/commit/7a2f430830b78d463f5122afe5d694d53e758c82))
+
 ## [1.0.5](https://github.com/marslo/ifonts-github/compare/v1.0.4...v1.0.5) (2026-10-21)
 
 ### Bug Fixes
