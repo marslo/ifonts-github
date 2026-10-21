@@ -1,3 +1,9 @@
+## [1.0.5](https://github.com/marslo/ifonts-github/compare/v1.0.4...v1.0.5) (2026-10-21)
+
+### Bug Fixes
+
+* **mono**, **pr**, **release**: enlarge mono font sizes, exclude PR semibold titles and truncated file names from header font rules, and clean up release-note and typos tooling ([88d60db](https://github.com/marslo/ifonts-github/commit/88d60db6c6df993cda97b91095e3a55f805fda55))
+
 ## [1.0.4](https://github.com/marslo/ifonts-github/compare/v1.0.3...v1.0.4) (2026-09-30)
 
 ### Bug Fixes
