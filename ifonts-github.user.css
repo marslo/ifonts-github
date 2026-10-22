@@ -402,7 +402,10 @@
   [class*="AutomatedReview"] .blob-code-inner *,
   [class*="AutomatedReview"] .blob-code,
   [class*="AutomatedReview"] .blob-code *,
-  [class*="AutomatedReview"] .blob-num {
+  [class*="AutomatedReview"] .blob-num,
+  /* conversation page: copilot suggested changeset ( `unifiedDiffLines` table, camelCase `diffTextCell` / `diffLineNumber` / `diffHunkText` ) */
+  [data-testid="automated-review-suggestion"] [class*="unifiedDiffLines"] code,
+  [data-testid="automated-review-suggestion"] [class*="unifiedDiffLines"] code * {
     font-size: var(--font-size-small-mono) !important;
   }
 

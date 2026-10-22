@@ -22,12 +22,12 @@ GitHub-only font customization: configurable sans / mono / handwritten / icon fo
 
 Stylus → style ⚙ **Configure**:
 
-| option | variable | default ( first entries ) |
-|---|---|---|
-| Sans Fonts | `font-family-sans` | `Titillium Nerd Font Upright`, `Titillium Nerd Font`, `Gisha Nerd Font`, `Recursive Sans Casual Static Nerd Font`, … |
-| Mono Fonts | `font-family-github-mono` | `Blex` ( BlexMonoLig Book / Text ), `BlexMonoLig Nerd Font Mono`, `OperatorMonoSSmLig Nerd Font Mono`, … |
-| Handwritten Fonts | `font-family-handwritten` | `Papyrus Nerd Font`, `fantasy` |
-| Icon Fonts | `font-family-icon` | `Google Material Icons`, `Material Icons Extended`, Font Awesome, `codicon`, … ( applied to icon elements so glyphs still render ) |
+| OPTION            | VARIABLE                  | DEFAULT ( FIRST ENTRIES )                                                                                                          |
+| ----------------- | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Sans Fonts        | `font-family-sans`        | `Titillium Nerd Font Upright`, `Titillium Nerd Font`, `Gisha Nerd Font`, `Recursive Sans Casual Static Nerd Font`, …               |
+| Mono Fonts        | `font-family-github-mono` | `Blex` ( BlexMonoLig Book / Text ), `BlexMonoLig Nerd Font Mono`, `OperatorMonoSSmLig Nerd Font Mono`, …                           |
+| Handwritten Fonts | `font-family-handwritten` | `Papyrus Nerd Font`, `fantasy`                                                                                                     |
+| Icon Fonts        | `font-family-icon`        | `Google Material Icons`, `Material Icons Extended`, Font Awesome, `codicon`, … ( applied to icon elements so glyphs still render ) |
 
 ## Fonts download
 
