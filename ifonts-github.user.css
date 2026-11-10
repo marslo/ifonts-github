@@ -59,6 +59,13 @@
     --font-size-h4: 20px;
     --font-size-h5: 16px;
 
+    --h1-size: 34px;
+    --h2-size: 26px;
+    --h3-size: 24px;
+    --h4-size: 20px;
+    --h5-size: 16px;
+
+
     --font-size-github-mono: var(--font-size-normal-mono);
   }
 
@@ -185,7 +192,8 @@
    h1 > code, h1 > a > code,
   *:not(blockquote) > h2:not(
       [class*="f4"],                                          /* github fork list */
-      [class*="InlineReviewThread"]                           /* PR file change inline review header */
+      [class*="InlineReviewThread"],                          /* PR file change inline review header */
+      [class*="Overlay-"]                                     /* Collaborators and teams - add members */
    ) >
     :is(
       a:not([class*="css-"]),
@@ -405,7 +413,10 @@
   [class*="AutomatedReview"] .blob-num,
   /* conversation page: copilot suggested changeset ( `unifiedDiffLines` table, camelCase `diffTextCell` / `diffLineNumber` / `diffHunkText` ) */
   [data-testid="automated-review-suggestion"] [class*="unifiedDiffLines"] code,
-  [data-testid="automated-review-suggestion"] [class*="unifiedDiffLines"] code * {
+  [data-testid="automated-review-suggestion"] [class*="unifiedDiffLines"] code *,
+  /* conversation page: diff context preview above a review thread ( `StaticDiffPreview`, same camelCase table, outside `automated-review-suggestion` ) */
+  [class*="StaticDiffPreview"] [class*="unifiedDiffLines"] code,
+  [class*="StaticDiffPreview"] [class*="unifiedDiffLines"] code * {
     font-size: var(--font-size-small-mono) !important;
   }
 
