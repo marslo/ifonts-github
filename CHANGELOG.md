@@ -1,3 +1,16 @@
+## [1.0.7](https://github.com/marslo/ifonts-github/compare/v1.0.6...v1.0.7) (2026-11-10)
+
+### Bug Fixes
+
+* **font-size**: size review thread diff previews ([ebe222a](https://github.com/marslo/ifonts-github/commit/ebe222a3ba303d115e55b6a43b6279650535c6f2))
+  - apply `--font-size-small-mono` to `StaticDiffPreview` tables in review threads
+  - exclude `[class*="Overlay-"]` from the h2 heading size rule
+  - add `--h1-size` to `--h5-size` variables alongside the existing font-size tokens
+* **github**, **readme**: size AI suggestion diffs again ([4da0c58](https://github.com/marslo/ifonts-github/commit/4da0c588cc999fa684f18c9047de4386fdd20153))
+  - match the suggested changeset via `data-testid="automated-review-suggestion"`
+  - cover the camelCase `unifiedDiffLines` table code cells, line numbers and hunk header
+  - align the readme options table columns
+
 ## [1.0.6](https://github.com/marslo/ifonts-github/compare/v1.0.5...v1.0.6) (2026-10-21)
 
 ### Bug Fixes
