@@ -608,8 +608,10 @@
   /* ── hidden GitHub：hidden「xxx had recent pushes」 ─────────── */
   /* check details in : https://github.com//${OWNRE}/${REPO}/show_partial?partial=tree%2Frecently_touched_branches_list */
   div[class*="RecentlyTouchedBranches-module"][class*="Flash"][data-variant="warning"],  /* css-module class: `…-module__Flash` → `…-module_<hash>_Flash` */
-  div[data-url*="recently_touched_branches_list"] {
-    display: none;
+  div[data-url*="recently_touched_branches_list"],
+  [data-testid*="recently-touched-branches"] {                /* react wrapper ( e.g. `repo-pulls-recently-touched-branches` on the PR list ), hides the whole banner incl. its bottom margin */
+    /* `!important`: the wrapper carries primer's `.d-flex { display: flex !important }` */
+    display: none !important;
   }
 
   /* ── github.io (github pager / gitbook) ─────────────────── */
