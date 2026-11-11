@@ -1,3 +1,15 @@
+## [1.0.8](https://github.com/marslo/ifonts-github/compare/v1.0.7...v1.0.8) (2026-11-11)
+
+### Bug Fixes
+
+* **github**: hide recent-pushes banner on PR list ([7ef31f1](https://github.com/marslo/ifonts-github/commit/7ef31f14ef3f3c7e847a508121bb2458b746a37e))
+  - match `[data-testid*="recently-touched-branches"]` so the react wrapper on the PR list is hidden
+  - force `display: none !important` to beat primer's `.d-flex` utility
+
+### Others
+
+* **pr**, **overview**: adjust font-size for pr overview page (preview feature) ([6bfd8d3](https://github.com/marslo/ifonts-github/commit/6bfd8d39e3604602e0612014943e2fa56d03f0a9))
+
 ## [1.0.7](https://github.com/marslo/ifonts-github/compare/v1.0.6...v1.0.7) (2026-11-10)
 
 ### Bug Fixes
