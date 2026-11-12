@@ -53,13 +53,13 @@
     --font-size-small-mono: 15px;
     --font-size-xsmall-mono: 14px;
 
-    --font-size-h1: 34px;
+    --font-size-h1: 32px;
     --font-size-h2: 26px;
     --font-size-h3: 24px;
     --font-size-h4: 20px;
     --font-size-h5: 18px;
 
-    --h1-size: 34px;
+    --h1-size: 32px;
     --h2-size: 26px;
     --h3-size: 24px;
     --h4-size: 20px;
@@ -307,7 +307,8 @@
 
   /* ── others: github bits (readme-toc / BorderGrid / gogh github.io) ── */
   [data-target*="readme-toc.content"] *,
-  .css-truncate a, .BorderGrid-cell,
+  .css-truncate:not(.commit-ref, .commit-ref *) a,            /* branch / ref pills ( `.commit-ref` ) keep the mono font */
+  .BorderGrid-cell,
   .terminal .bar .bar__title {                                /* https://gogh-co.github.io/Gogh */
     font-family: var(--font-family-sans) !important;
   }
@@ -495,6 +496,7 @@
 
   /* github revision number / pr number ( `#169501` in the sticky pr header, css-module class `number__<hash>` matched without the hash ) */
   a[href*="/commit/"][class*="prc-Button-ButtonBase"] [class*="prc-Button-Label"],
+  code a[href*="/commit/"],                                   /* short sha link inside `code` */
   .Link--secondary span,
   span[class*="number__"] {
     font-family: var(--font-family-github-mono) !important;
