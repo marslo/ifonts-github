@@ -57,13 +57,13 @@
     --font-size-h2: 26px;
     --font-size-h3: 24px;
     --font-size-h4: 20px;
-    --font-size-h5: 16px;
+    --font-size-h5: 18px;
 
     --h1-size: 34px;
     --h2-size: 26px;
     --h3-size: 24px;
     --h4-size: 20px;
-    --h5-size: 16px;
+    --h5-size: 17px;
 
 
     --font-size-github-mono: var(--font-size-normal-mono);
@@ -71,7 +71,7 @@
 
   html {
     --font-size-xsmall-mono: 13px;
-    --font-size-h5: 16px;
+    --font-size-h5: 18px;
   }
 
   body {
@@ -482,9 +482,11 @@
     font-size: var(--font-size-github-mono) !important;
   }
 
-  /* issue comments */
+  /* issue / PR comments ( `…safe-html-box` css-module class, matched by its stable name part without the hash suffix; `.markdown-body` raises specificity over primer's `.f5` utility ) */
+  .markdown-body[class*="safe-html-box"],
+  .comment-body,
   [class*="NewMarkdownViewer-module__safe-html-box"] {
-    font-size: 17px !important;
+    font-size: var(--h5-size, 16px) !important;
   }
 
   /* github: go to file */
@@ -522,7 +524,7 @@
     padding-top: 0px !important;
   }
   h2.breadcrumb, .separator {
-    font-size: 16px !important;
+    font-size: var(--h5-size, 16px) !important;
   }
   .markdown-body.js-comment-body p,
   h3.text-normal a.author,
@@ -620,7 +622,7 @@
     font-size: var(--font-size-small-mono) !important;
   }
   .markdown-section *:not(mark, span, h1, h2, h3, h4, a>code, code) {
-    font-size: 16px !important;
+    font-size: var(--h5-size, 16px) !important;
   }
   .markdown-section a,
   .book-summary a,
