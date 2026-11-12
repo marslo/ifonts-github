@@ -493,9 +493,10 @@
   .HVNDY { font-family: var(--font-family-sans) !important; }
   div[class*="Box-sc-"], div.ewmGxV { font-family: var(--font-family-github-mono) !important; }
 
-  /* github revision number */
+  /* github revision number / pr number ( `#169501` in the sticky pr header, css-module class `number__<hash>` matched without the hash ) */
   a[href*="/commit/"][class*="prc-Button-ButtonBase"] [class*="prc-Button-Label"],
-  .Link--secondary span {
+  .Link--secondary span,
+  span[class*="number__"] {
     font-family: var(--font-family-github-mono) !important;
   }
   a:is([class*="-author"], [class*="user"]) {
