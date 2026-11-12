@@ -1,3 +1,12 @@
+## [1.0.9](https://github.com/marslo/ifonts-github/compare/v1.0.8...v1.0.9) (2026-11-12)
+
+### Bug Fixes
+
+* **github**, **pr**: fix PR/issue comment body font-size by matching `safe-html-box` without its hash suffix, and drive comment/breadcrumb/markdown-section sizes from `--h5-size` ( now `17px`, with `--font-size-h5` at `18px` ) ([5c0898c](https://github.com/marslo/ifonts-github/commit/5c0898c923dfba2a8d90f986f4a4ee4c2af86020))
+  - match the hashed `safe-html-box` css-module class by its stable name part and add `.comment-body`, with `.markdown-body` raising specificity over primer's `.f5`
+  - drive comment body, breadcrumb and `.markdown-section` sizes from `--h5-size` instead of fixed `16px`/`17px`
+  - bump `--h5-size` to `17px` and `--font-size-h5` to `18px`
+
 ## [1.0.8](https://github.com/marslo/ifonts-github/compare/v1.0.7...v1.0.8) (2026-11-11)
 
 ### Bug Fixes
