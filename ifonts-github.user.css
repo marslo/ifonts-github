@@ -501,6 +501,10 @@
   span[class*="number__"] {
     font-family: var(--font-family-github-mono) !important;
   }
+  /* repo latest-commit message row: inline `code` follows the surrounding link / span size instead of github's fixed `12px` */
+  [data-testid="latest-commit-html"] code {
+    font-size: inherit !important;
+  }
   .lh-condensed > a:not(
     [data-hydro-click],
     [data-hovercard-url],
@@ -519,7 +523,7 @@
   [data-hovercard-type="user"]  span.AppHeader-context-item-label,
   span:is([class^="AppHeader-context-item-label"]),
   a:is([class*="AuthorName__"]),
-  [data-hovercard-type="user"], [data-hovercard-type="user"] + span.css-truncate, [data-hovercard-type="user"] ~ span.css-truncate,
+  [data-hovercard-type="user"]:not([class*="reviewerIdentity__"]), [data-hovercard-type="user"] + span.css-truncate, [data-hovercard-type="user"] ~ span.css-truncate,
   div[data-testid="author-link"] span {
     font-family: var(--font-family-handwritten) !important;
     font-size: 110% !important;
