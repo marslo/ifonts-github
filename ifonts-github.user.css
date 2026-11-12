@@ -501,10 +501,6 @@
   span[class*="number__"] {
     font-family: var(--font-family-github-mono) !important;
   }
-  a:is([class*="-author"], [class*="user"]) {
-    font-family: var(--font-family-handwritten) !important;
-    font-size: var(--font-size-normal-sans);
-  }
   .lh-condensed > a:not(
     [data-hydro-click],
     [data-hovercard-url],
@@ -515,13 +511,20 @@
     font-weight: bold;
   }
   .d-flex.flex-wrap.flex-justify-end [rel*="author"],
+  a:is([class*="-author"], [class*="user"]),
   header.pagehead h1,
   span.js-repo-root,
+  ol:is([class*="rgh-repo-header-info"]) span,                /* ORG */
   div.vcard-names-container h1 .vcard-fullname,
   [data-hovercard-type="user"]  span.AppHeader-context-item-label,
-  span:is([class^="AppHeader-context-item-label"]) {
+  span:is([class^="AppHeader-context-item-label"]),
+  a:is([class*="AuthorName__"]),
+  [data-hovercard-type="user"], [data-hovercard-type="user"] + span.css-truncate, [data-hovercard-type="user"] ~ span.css-truncate,
+  div[data-testid="author-link"] span {
     font-family: var(--font-family-handwritten) !important;
-    font-size: 24px !important;
+    font-size: 110% !important;
+    font-weight: bold !important;
+    /* font-size: 24px !important; */
   }
   h3.text-normal a.author {
     padding-top: 0px !important;
