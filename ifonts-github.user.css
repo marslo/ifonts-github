@@ -24,16 +24,16 @@
 
   /* ── shared definitions (scoped to this domain; no global section) ── */
   @font-face { font-family: "San Francisco"; font-weight: 400; src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff"); }
-  @font-face { font-family: 'OperatorMonoSSmLig Nerd Font Mono'; font-weight: 300; font-style: normal; src: url('https://github.com/marslo/fonts/raw/fonts/Operator/OperatorMonoSSmLigNF/otf/OperatorMonoSSmLigNerdFontMono-Light.otf') format('opentype');       }
+  @font-face { font-family: 'OperatorMonoSSmLig Nerd Font Mono'; font-weight: 300; font-style: normal; src: url('https://github.com/marslo/fonts/raw/fonts/Operator/OperatorMonoSSmLigNF/otf/OperatorMonoSSmLigNerdFontMono-Light.otf') format('opentype'); }
   @font-face { font-family: 'OperatorMonoSSmLig Nerd Font Mono'; font-weight: 300; font-style: italic; src: url('https://github.com/marslo/fonts/raw/fonts/Operator/OperatorMonoSSmLigNF/otf/OperatorMonoSSmLigNerdFontMono-LightItalic.otf') format('opentype'); }
 
   /* ── BlexMonoLig Nerd Font Mono : book(350) → normal; text(450) → bold ── */
   /* normal(400) → Book(350) */
-  @font-face { font-family:'Blex'; font-weight:normal; font-style:normal; src: local('BlexMonoLigNFM-Book'),       local('BlexMonoLig Nerd Font Mono Book');        }
+  @font-face { font-family:'Blex'; font-weight:normal; font-style:normal; src: local('BlexMonoLigNFM-Book'),       local('BlexMonoLig Nerd Font Mono Book'); }
   @font-face { font-family:'Blex'; font-weight:normal; font-style:italic; src: local('BlexMonoLigNFM-BookItalic'), local('BlexMonoLig Nerd Font Mono Book Italic'); }
   /* bold(700) → Text(450) */
-  @font-face { font-family:'Blex'; font-weight:bold;   font-style:normal; src: local('BlexMonoLigNFM-Text'),       local('BlexMonoLig Nerd Font Mono Text');        }
-  @font-face { font-family:'Blex'; font-weight:bold;   font-style:italic; src: local('BlexMonoLigNFM-TextItalic'), local('BlexMonoLig Nerd Font Mono Text Italic'); }
+  @font-face { font-family:'Blex'; font-weight:bold; font-style:normal; src: local('BlexMonoLigNFM-Text'),       local('BlexMonoLig Nerd Font Mono Text'); }
+  @font-face { font-family:'Blex'; font-weight:bold; font-style:italic; src: local('BlexMonoLigNFM-TextItalic'), local('BlexMonoLig Nerd Font Mono Text Italic'); }
 
 
   :root {
@@ -518,11 +518,12 @@
   a:is([class*="-author"], [class*="user"]),
   header.pagehead h1,
   span.js-repo-root,
-  ol:is([class*="rgh-repo-header-info"]) span,                /* ORG */
+  /* ol:is([class*="rgh-repo-header-info"]) span,                ORG */
   div.vcard-names-container h1 .vcard-fullname,
   [data-hovercard-type="user"]  span.AppHeader-context-item-label,
   span:is([class^="AppHeader-context-item-label"]),
   a:is([class*="AuthorName__"]),
+  a:is([class*="author__"]),                                  /* PR timeline author link ( bot / app links have no data-hovercard-type ) */
   [data-hovercard-type="user"]:not([class*="reviewerIdentity__"]), [data-hovercard-type="user"] + span.css-truncate, [data-hovercard-type="user"] ~ span.css-truncate,
   div[data-testid="author-link"] span {
     font-family: var(--font-family-handwritten) !important;
