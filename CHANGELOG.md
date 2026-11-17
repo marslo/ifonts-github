@@ -1,3 +1,25 @@
+## [1.0.10](https://github.com/marslo/ifonts-github/compare/v1.0.9...v1.0.10) (2026-11-17)
+
+### Bug Fixes
+
+* **commit**: keep mono for branch and sha ([d434b12](https://github.com/marslo/ifonts-github/commit/d434b124dea951dc987500dbffbc1a636d3e8c11))
+  - exclude `.commit-ref` from the `.css-truncate a` sans rule so branch / ref pills keep the mono font
+  - apply the mono font to `code a[href*="/commit/"]` short sha links
+* **commit**: make inline `code` in the repo latest-commit message row inherit the surrounding link / span size instead of github's fixed `12px` ([ab948c4](https://github.com/marslo/ifonts-github/commit/ab948c4bd01f328a264d0f53495f0a1ab8ed33be))
+* **layout**: baseline-align PR review and timeline headers ([78aaa53](https://github.com/marslo/ifonts-github/commit/78aaa53b1a0f1f83245de4314b099d9766784aae))
+  - baseline-align the file name and `Line N` in the review thread header
+  - baseline-align the author name and `Bot` label in timeline comment headers
+
+### Code Refactoring
+
+* **user**: apply handwritten font to user names ([002511b](https://github.com/marslo/ifonts-github/commit/002511b773f008627f4ad21b4d5aa69474d6de9b))
+  - extend the handwritten font rule to the repo owner in the `rgh-repo-header-info` breadcrumb, `AuthorName__` links, `[data-hovercard-type="user"]` links and the adjacent full-name `span.css-truncate`
+  - switch the shared font size from a fixed `24px` to `110%` so it scales with the surrounding text
+
+### Others
+
+* **pr**: apply the mono font to the PR number in the sticky PR header by matching `number__` without its hash suffix ([9462a1e](https://github.com/marslo/ifonts-github/commit/9462a1e2d26549e8d09c0d810a4e3b03205bfb69))
+
 ## [1.0.9](https://github.com/marslo/ifonts-github/compare/v1.0.8...v1.0.9) (2026-11-12)
 
 ### Bug Fixes
