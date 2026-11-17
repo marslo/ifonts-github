@@ -251,6 +251,12 @@
     font-weight: 400 !important;
   }
 
+  /* pr / issue list row title ( `h3 > a[data-testid="listitem-title-link"]` ): normal sans size instead of the h3 size */
+  h3:has(> a[data-testid="listitem-title-link"]),
+  h3:has(> a[data-testid="listitem-title-link"]) * {
+    font-size: var(--font-size-normal-sans) !important;
+  }
+
   /* ── code block ─────────────────────────────────────────── */
   .markdown-body :is(code, code *),
   [class*="markdown"]:not([class*="markdown-section"]) code {
