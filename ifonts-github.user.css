@@ -233,7 +233,7 @@
   }
   h3 > code, h3:not([class*="DiffFileHeader-module_"] h3):not([class*="file-name-truncate__"]) > a > code, h3#gh-pages code,
   .markdown-section h3 code,
-  h4:not( [class*="btn"], [class*="panel-title"], [class*="flex-1"], [class*="name-copy"], :has(> a[class*="anchor__"]) ),
+  h4:not( [class*="btn"], [class*="panel-title"], [class*="flex-1"], [class*="name-copy"], [class*="titleHeader__"], :has(> a[class*="anchor__"]) ),
   section[role*="region"] h3,
   .blockList > h3,
   .markdown-section h3 > code,
