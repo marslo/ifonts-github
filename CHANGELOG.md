@@ -1,3 +1,21 @@
+## [1.1.0](https://github.com/marslo/ifonts-github/compare/v1.0.10...v1.1.0) (2026-11-18)
+
+### Features
+
+* **docs**: widen docs.github.com article layout ([57c06c7](https://github.com/marslo/ifonts-github/commit/57c06c7b5e4f3f4057d66774a438621beb90283d))
+  - add a `docs.github.com` block to the stylesheet
+  - raise the `ArticleGridLayout_containerBox*` cap to `90cqw` and center it
+  - uncap the article grid column across the 1012 / 1074 / 1400px breakpoints
+
+### Bug Fixes
+
+* **checks**: exclude checks list titles from h4 size ([4c0631c](https://github.com/marslo/ifonts-github/commit/4c0631c3f50d24b8b21540e8c9119be2f8da551d))
+  - skip `h4[class*="titleHeader__"]` in the global `h4` font-size rule
+  - keep github's native size for PR checks list row titles
+* **pr**, **list**: use normal sans size for list row titles ([5036e0b](https://github.com/marslo/ifonts-github/commit/5036e0b89a411414a24325f70dc47bb146f6dca5))
+  - override the `h3` size on PR / issue list rows via `listitem-title-link`
+  - apply `--font-size-normal-sans` to the title and its children
+
 ## [1.0.10](https://github.com/marslo/ifonts-github/compare/v1.0.9...v1.0.10) (2026-11-17)
 
 ### Bug Fixes
