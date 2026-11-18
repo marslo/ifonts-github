@@ -675,3 +675,39 @@
   */
 
 } /* @-moz-document: github.com && github.io */
+
+@-moz-document domain("docs.github.com") {
+
+  /**
+   * docs.github.com
+  **/
+
+  /* article grid: github caps the content column at 720px ( 785px with the right TOC ) and the whole grid at `max-width: 720px` on narrower viewports; raise the outer cap to 90% of the content pane ( `main#main-content` is already the `cqw` inline-size container ), centered, and let the inner column fill it. hashed css-module names are matched by their stable prefix */
+  [class*="ArticleGridLayout_containerBox"] {
+    max-width: 90cqw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  /* footer: primer brand caps both footer containers at `var(--brand-footer-max-width, 1280px)`; the footer sits outside `main#main-content` ( no `cqw` container ), so use `90%` of the footer width, which equals the main pane width */
+  footer[data-container="footer"] [class*="MinimalFooter__container"] {
+    max-width: 90% !important;
+  }
+  /* >= 1012px, no Xxl variant: [ article | right TOC ] */
+  @media (min-width: 1012px) {
+    [class*="ArticleGridLayout_containerBox__"]:not([class*="ArticleGridLayout_containerBoxXxl"]) {
+      grid-template-columns: minmax(500px, 1fr) minmax(220px, 326px) !important;
+    }
+  }
+  /* >= 1400px ( Xxl ) / >= 1074px ( Xxl collapsed sidebar ): [ gutter | article | gutter | right TOC ] with the article column uncapped */
+  @media (min-width: 1400px) {
+    [class*="ArticleGridLayout_containerBoxXxl__"] {
+      grid-template-columns: 24px minmax(500px, 1fr) 24px 326px !important;
+    }
+  }
+  @media (min-width: 1074px) {
+    [class*="ArticleGridLayout_containerBoxXxlCollapsed__"] {
+      grid-template-columns: 24px minmax(500px, 1fr) 24px 326px !important;
+    }
+  }
+
+} /* @-moz-document: docs.github.com */
