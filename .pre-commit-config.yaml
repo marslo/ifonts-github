@@ -2,7 +2,7 @@
 ---
 # pin the Node used by node-language hooks (stylelint) to an LTS whose npm (10.x) still tolerates the deprecated `--ignore-prepublish` flag that pre-commit 4.6.x passes during hook install. Node 24+/npm 11 hard-error on it (EUNKNOWNCONFIG).
 default_language_version:
-  node: 26.13.0
+  node: 26.13.1
 
 # `pre-commit install` installs BOTH git hooks (so the commit-msg check activates without --hook-type)
 default_install_hook_types: [pre-commit, commit-msg]
