@@ -310,6 +310,12 @@
     font-size: var(--font-size-small-mono) !important;
   }
 
+  /* github copilot onboarding popover ( `Meet the new Copilot` ): sans font + buttons; three attributes outrank the `[class*="ace_"] *` rule above, which reaches it through the `NarrowLeadingSpace__<hash>` ancestor */
+  [data-copilot-onboarding-popover][data-component="Popover"][role="dialog"],
+  [data-copilot-onboarding-popover][data-component="Popover"][role="dialog"] * {
+    font-family: var(--font-family-sans) !important;
+  }
+
 
   /* ── others: github bits (readme-toc / BorderGrid / gogh github.io) ── */
   [data-target*="readme-toc.content"] *,
