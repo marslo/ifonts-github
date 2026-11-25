@@ -1,3 +1,23 @@
+## [1.1.1](https://github.com/marslo/ifonts-github/compare/v1.1.0...v1.1.1) (2026-11-25)
+
+### Bug Fixes
+
+* **copilot**: use sans font in onboarding popover ([5bc3d26](https://github.com/marslo/ifonts-github/commit/5bc3d26e9fcd31e99a6f5c97c3577d8e2fbb94c0))
+  - add a rule scoped to `[data-copilot-onboarding-popover]` that sets the sans `font-family`
+  - leave the `[class*="ace_"]` editor rule untouched so no other element changes
+  - outrank the editor rule by selector specificity, independent of source order
+* **diff**: restore mono font on react diff cells ([c2b5aab](https://github.com/marslo/ifonts-github/commit/c2b5aab7cadde5b172547af9268395ddf673a5a6))
+  - add `data-diff-cell` selectors for the code, hunk header and line-number cells of the camelCase react diff
+  - keep the `diff-text` / `diff-line-number` selectors for the old class names
+  - exclude `unifiedDiffLines` tables from the gutter selector via `:where()` so they keep their own sizes
+
+### CI/CD
+
+* **release**: use function templates for changelog notes ([a3f3087](https://github.com/marslo/ifonts-github/commit/a3f30877bd1c76cf6a52b10cc59e3962841df1ab))
+  - replace Handlebars `mainTemplate` / `headerPartial` / `commitPartial` strings with function versions
+  - add `template`, `preamblePartial` and `footerPartial` for `conventional-changelog-writer` 9
+  - fix `headerPartial is not a function` on `semantic-release` 26
+
 ## [1.1.0](https://github.com/marslo/ifonts-github/compare/v1.0.10...v1.1.0) (2026-11-18)
 
 ### Features
