@@ -642,6 +642,8 @@
   /* check details in : https://github.com//${OWNRE}/${REPO}/show_partial?partial=tree%2Frecently_touched_branches_list */
   div[class*="RecentlyTouchedBranches-module"][class*="Flash"][data-variant="warning"],  /* css-module class: `…-module__Flash` → `…-module_<hash>_Flash` */
   div[data-url*="recently_touched_branches_list"],
+  /* repo code page: primer `Flash` ( warning ) whose direct child is the `Compare & pull request` link; css-module class is now only `Flash__<hash>`, no module prefix */
+  div[data-component="Flash"][data-variant="warning"]:has(> a[href*="/compare/"][href*="expand=1"]),
   [data-testid*="recently-touched-branches"] {                /* react wrapper ( e.g. `repo-pulls-recently-touched-branches` on the PR list ), hides the whole banner incl. its bottom margin */
     /* `!important`: the wrapper carries primer's `.d-flex { display: flex !important }` */
     display: none !important;
