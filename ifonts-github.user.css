@@ -542,6 +542,8 @@
   span:is([class^="AppHeader-context-item-label"]),
   a:is([class*="AuthorName__"]),
   a:is([class*="author__"]),                                  /* PR timeline author link ( bot / app links have no data-hovercard-type ) */
+  /* repo sidebar contributors name link ( app / bot accounts have no data-hovercard-type ) */
+  a:is([class*="SidebarContributors-module"][class*="nameLink"]),
   [data-hovercard-type="user"]:not([class*="reviewerIdentity__"]), [data-hovercard-type="user"] + span.css-truncate, [data-hovercard-type="user"] ~ span.css-truncate,
   div[data-testid="author-link"] span {
     font-family: var(--font-family-handwritten) !important;
