@@ -480,7 +480,13 @@
   /* ── new react diff view (PR/commit/compare): all languages ── */
   code[class*="diff-text"],                                  /* code cell + hunk header cell */
   code[class*="diff-text"] *,                                /* diff-text-inner, syntax/whitespace spans, +/- marker */
-  td[class*="diff-line-number"] {                            /* line-number gutter */
+  td[class*="diff-line-number"],                             /* line-number gutter */
+  /* camelCase css-module classes ( `diffText__<hash>`, `diffHunkText__<hash>`, `newDiffLineNumber__<hash>` ), matched by the stable `data-diff-cell` attribute */
+  [data-diff-cell="text"] code,                              /* code cell */
+  [data-diff-cell="text"] code *,                            /* `diffTextInner`, syntax/whitespace spans, +/- marker */
+  [data-diff-cell="hunk"] code,                              /* hunk header ( `@@ -1,3 +1,4 @@` ) */
+  [data-diff-cell="hunk"] code *,
+  td[data-diff-cell="line-number"]:not(:where([class*="unifiedDiffLines"] *)) {   /* line-number gutter; `:where()` keeps specificity unchanged, conversation-page `unifiedDiffLines` tables keep their own sizes */
     font-family: var(--font-family-github-mono) !important;
     font-size: var(--font-size-github-mono) !important;
   }
